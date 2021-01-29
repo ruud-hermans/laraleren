@@ -20,7 +20,12 @@ class ArticleController extends Controller
         
         return view('articles',[
             'articles' => $articles = Article::paginate(2)
-            // Article::take(2)->latest()->get()
         ]);
+    }
+
+    public function create(){
+        
+
+        return view('articles.create');
     }
 }
