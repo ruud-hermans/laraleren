@@ -4,38 +4,30 @@
 
     <div id="wrapper">
         <div id="page" class="container">
-            <h1>New Article</h1>
+            <h1>Edit Article</h1>
 
-            <form method="post" action="/articles">
+            <form method="post" action="/articles/{{ $article->id }}">
                 @csrf
+                @method('put')
                 
                 <div class="field">
                     <label class="label" for="title">Title</label>
                     <div class="control">
-                        <input class="input @error('title') @enderror" type="text" name="title" id="title" value="{{ old('title') }}">
-                        @error('title')
-                            <p class="">{{ $errors->first('title') }}</p>
-                        @enderror
+                        <input class="input" type="text" name="title" id="title" value="{{ $article->title }}">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="excerpt">Excerpt</label>
                     <div class="control">
-                        <textarea class="textarea @error('excerpt') @enderror" name="excerpt" id="excerpt" value="">{{ old('excerpt') }}</textarea>
-                        @error('title')
-                            <p class="">{{ $errors->first('excerpt') }}</p>
-                        @enderror
+                        <textarea class="textarea" name="excerpt" id="excerpt" >{{ $article->excerpt }}</textarea>
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="body">Body</label>
                     <div class="control">
-                        <textarea class="textarea @error('body') @enderror" name="body" id="body" value="">{{ old('body') }}</textarea>
-                        @error('title')
-                            <p class="">{{ $errors->first('body') }}</p>
-                        @enderror
+                        <textarea class="textarea" name="body" id="body" value="">{{ $article->body }}</textarea>
                     </div>
                 </div>
 

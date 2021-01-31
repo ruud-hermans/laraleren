@@ -8,15 +8,16 @@
 			@foreach ($articles as $article)
 			<li class="first">
 				<h3>
-					<a href="/articles/{{$article->id}}"> {{ $article->title }}
+					<a href="{{ $article->path() }}"> {{ $article->title }}
     			</h3>
 				
                 <p><a>{{ $article->excerpt }}</a></p>
                 <p><a>{{ $article->body }}</a></p>
 			</li>
 			@endforeach
+			{{ $articles->links() }}
         </ul>
-        {{ $articles->links() }}
+        
     </div>
     
 </div>

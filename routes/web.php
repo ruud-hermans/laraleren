@@ -15,10 +15,6 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,8 +28,11 @@ Route::get('/about', function () {
 
 
 Route::get('articles', [ArticleController::class, 'showAll']);
+Route::post('articles', [ArticleController::class, 'store']);
 Route::get('articles/create', [ArticleController::class, 'create']);
-Route::get('articles/{article}', [ArticleController::class, 'show']);
+Route::get('articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
+Route::get('articles/{article}/edit', [ArticleController::class, 'edit']);
+Route::put('articles/{article}', [ArticleController::class, 'update']);
 
 
 
