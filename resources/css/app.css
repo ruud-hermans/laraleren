@@ -1,0 +1,10 @@
+/* 
+voor gebruik eigen CSS:
+
+@import "/resource/css/[naam.css]";
+
+moet ook gepublished worden met 'npm run watch' (a la nodemon)
+enkele run -> npm run dev
+live website -> npm run prod
+
+*/
