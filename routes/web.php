@@ -17,25 +17,26 @@ use App\Http\Controllers\ArticleController;
 
 
 
-app()->bind('example', function(){
-   return new \App\Models\Example();
+// app()->bind('example', function(){
 
-});
+//     $foo = config('services.foo');
+//     return new \App\Models\Example($foo);
 
-
-Route::get('/', function () {
-    $example = resolve('example');
-
-    ddd('$example');
-
-
-});
-
+// });
 
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     $example = resolve('example');
+
+//     ddd($example);
 // });
+
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 
 Route::get('/about', function () {
     return view('about', [
