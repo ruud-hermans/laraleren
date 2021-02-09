@@ -15,7 +15,7 @@
                 <p><a>{{ $article->body }}</a></p>
 			</li>
 			@endforeach
-			{{ $articles->links() }}
+			{{-- {{ $articles->links() }} --}}
         </ul>
         
     </div>
